@@ -10,4 +10,6 @@
 
 ## Application Idea
 
-- summary: I will to build a full stack web application called todo list. This app will help me store all the tasks because I will help me prevent forget things.
+- summary: I will to build a full stack web application called todo list. This app will help me store all the tasks because I will help me prevent forget things. Data include tasks, priority, status, note, date. 
+- functionality： CRUD operation, upload image.
+
