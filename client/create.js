@@ -1,3 +1,5 @@
+import * as crud from "./crud.js";
+
 // image preview
 const imagePreviewButtonElement = document.getElementById(
   "image_preview_button"
@@ -21,16 +23,18 @@ videoPreviewButtonElement.addEventListener("click", () => {
 // submit button
 const submitButtonElement = document.getElementById("submit-buttom");
 submitButtonElement.addEventListener("click", () => {
-  event.preventDefault();
-  const recipe = {
-    name: document.getElementById("name").value,
-    ingredients: document.getElementById("ingredients").value,
-    time: document.getElementById("time").value,
-    cuisine: document.getElementById("cuisine").value,
-    difficulty: document.getElementById("difficulty").value,
-    image: document.getElementById("image").value,
-    video: document.getElementById("video").value,
-    instructions: document.getElementById("instructions").value,
-  };
-  console.log(recipe);
+  const name = document.getElementById("name").value;
+  const ingredients = document.getElementById("ingredients").value;
+  const time = document.getElementById("time").value;
+  const cuisine = document.getElementById("cuisine").value;
+  const difficulty = document.getElementById("difficulty").value;
+  const image = document.getElementById("image").value;
+  const video = document.getElementById("video").value;
+  const instructions = document.getElementById("instructions").value;
+
+  const recipe = await crud.createRecipe(name,ingredients,time,cuisine,difficulty,image,video,instructions);
+
+  if(recipe) {
+    alert("new recipe successfully created!");
+  }
 });

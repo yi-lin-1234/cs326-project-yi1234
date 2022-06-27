@@ -1,7 +1,9 @@
-import { data } from "./testData.js";
+import * as crud from "./crud.js";
 
 //=================javascript for left part=============================
 const dataTable = document.getElementById("data-table");
+
+const data = await crud.readAllRecipe();
 
 for (let i = 0; i < data.length; i++) {
   const tr = document.createElement("tr");
@@ -9,6 +11,7 @@ for (let i = 0; i < data.length; i++) {
   td.classList.add("text-center");
   td.innerText = data[i].name;
   tr.addEventListener("click", () => {
+    document.getElementById("id").innerHTML = data[i].id;
     document.getElementById("name").value = data[i].name;
     document.getElementById("ingredients").value = data[i].ingredients;
     document.getElementById("time").value = data[i].time;
@@ -48,15 +51,22 @@ videoPreviewButtonElement.addEventListener("click", () => {
 const submitButtonElement = document.getElementById("submit-buttom");
 submitButtonElement.addEventListener("click", () => {
   event.preventDefault();
-  const recipe = {
-    name: document.getElementById("name").value,
-    ingredients: document.getElementById("ingredients").value,
-    time: document.getElementById("time").value,
-    cuisine: document.getElementById("cuisine").value,
-    difficulty: document.getElementById("difficulty").value,
-    image: document.getElementById("image").value,
-    video: document.getElementById("video").value,
-    instructions: document.getElementById("instructions").value,
-  };
-  console.log(recipe);
+
+  const id = document.getElementById("id").innerHTML;
+  const name = document.getElementById("name").value;
+  const ingredients = document.getElementById("ingredients").value;
+  const time = document.getElementById("time").value;
+  const cuisine = document.getElementById("cuisine").value;
+  const difficulty = document.getElementById("difficulty").value;
+  const image = document.getElementById("image").value;
+  const video = document.getElementById("video").value;
+  const instructions = document.getElementById("instructions").value;
+
+  const recipe = await crud.updateRecipe(id,name,ingredients,time,cuisine,difficulty,image,video,instructions);
+
+  if(recipe) {
+    alert("recipe successfully updated!");
+  }
+
+
 });

@@ -1,0 +1,28 @@
+{
+  "name": "cookbook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "crud.js",
+  "type": "module",
+  "engines": {
+    "node": "16.11.0"
+  },
+  "scripts": {
+    "deploy": "copyfiles client/* server/* .env package*.json deploy",
+    "start": "node server/index.js",
+    "debug": "node --inspect-brk index.js"
+  },
+  "author": "Yi Lin",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "pg": "^8.7.3",
+    "express-session": "^1.17.2",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1"
+  }
+}

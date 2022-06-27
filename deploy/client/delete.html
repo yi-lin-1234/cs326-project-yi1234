@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Bootstrap demo</title>
+      <link
+         rel="stylesheet"
+         href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+         crossorigin="anonymous"
+         />
+      <script type="module" src="./delete.js" defer></script>
+   </head>
+   <body>
+      <nav class="navbar navbar-expand-lg bg-light">
+         <div class="container-fluid">
+            <a class="navbar-brand" href="#">cookbook</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+               <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="./all.html">all</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="./create.html">create</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="./update.html">update</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="./delete.html">delete</a>
+               </li>
+            </div>
+         </div>
+      </nav>
+      <div class="d-flex justify-content-center mt-5 mb-5">
+         <table class="table table-bordered table-sm mt-5 mb-5 w-50">
+            <thead>
+               <tr>
+                  <td class="text-center">
+                     name
+                  </td>
+                  <td>
+                  </td>
+               </tr>
+            </thead>
+            <tbody id="data-table">
+            </tbody>
+         </table>
+      </div>
+   </body>
+</html>
