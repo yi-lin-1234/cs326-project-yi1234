@@ -1,2 +1,2 @@
-- heroku link: 
+- heroku link: https://limitless-shore-39459.herokuapp.com/all.html
 - video demonstration link: https://www.youtube.com/watch?v=f0DsstRi1rA
