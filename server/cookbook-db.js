@@ -33,7 +33,7 @@ export class CookbookDatabase {
 
   async init() {
     const queryText = `
-      drop table recipes;
+      drop table if exists recipes;
       create table if not exists recipes (
         id serial primary key,
         name varchar(30),
